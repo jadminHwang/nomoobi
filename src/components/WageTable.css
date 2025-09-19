@@ -1,0 +1,251 @@
+.wage-table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table-header {
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 1px solid #dee2e6;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header-info h3 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.result-count {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.export-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.csv-btn {
+  background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+  color: white;
+}
+
+.csv-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(23, 162, 184, 0.3);
+}
+
+.txt-btn {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  color: white;
+}
+
+.txt-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.wage-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.wage-table th {
+  background: #667eea;
+  color: white;
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.wage-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.wage-table th.sortable:hover {
+  background: #5a6fd8;
+}
+
+.wage-table th.sortable.active {
+  background: #4c63d2;
+}
+
+.sort-icon {
+  margin-left: 8px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.wage-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f3f4;
+  vertical-align: middle;
+}
+
+.table-row {
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.table-row:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+.table-row:nth-child(even):hover {
+  background-color: #f1f3f4;
+}
+
+.job-type {
+  font-weight: 500;
+  color: #333;
+}
+
+.region {
+  color: #495057;
+}
+
+.wage {
+  font-weight: 600;
+  color: #28a745;
+  text-align: right;
+}
+
+.date {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* 로딩 스피너 */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+  color: #6c757d;
+  margin: 0;
+}
+
+/* 데이터 없음 */
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.no-data h3 {
+  margin: 0 0 12px 0;
+  color: #495057;
+}
+
+.no-data p {
+  margin: 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .table-header {
+    padding: 20px 15px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .export-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .export-btn {
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .wage-table th,
+  .wage-table td {
+    padding: 12px 15px;
+  }
+  
+  .wage-table {
+    font-size: 0.9rem;
+  }
+  
+  .wage-table th {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wage-table th,
+  .wage-table td {
+    padding: 10px 8px;
+  }
+  
+  .wage-table {
+    font-size: 0.8rem;
+  }
+  
+  .job-type {
+    min-width: 100px;
+  }
+  
+  .wage {
+    min-width: 80px;
+  }
+}
